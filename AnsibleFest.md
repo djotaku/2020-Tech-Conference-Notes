@@ -84,3 +84,32 @@ They had a Central Redential Provider, Cisco Identity Serivces Engine, and Red H
 (see Slide of how it Works)
 
 CyberArk provides Creds to Ansible. 
+
+### Business Benefits
+
+- He was able to reach and update all the devices without having to do it manually
+- security happy because creds aren't in any scripbs
+- ops happy because it didn't affect OpenShift
+
+
+## Live Q&A: Efficiently scaling automation across your organization
+
+Q: Best size team for a POC to show how automation will help the larger office?
+A: It depends. Start small and break things into small chunks. Show successes often. Smaller allows you to focus so you don't have to focus on external dependencies as much. 
+
+Q: As a small IT organization how can we overcome an engr department that has 0 trust in ops team?
+A: Start small to build the trust. Maybe use a side project to show them the value of what you're doing - maybe show a quick automation.
+
+Q: Now that Ansible includes collections - what's the best way to build a centralized repo for it?
+A: Git
+
+Q: How to include Windows in Ansible Automation
+A: It works well with Windows already!
+
+Missed question, but answer - need to make sure you use source control for your playbooks. It really is part of the core of the way Ansible operates.
+
+Q: Ansible is popular in my place. Everyone wants to be on Tower. How do help spread this throughout the whole organization?
+A: Tower has organization and RBAC. Give each group control over their own "destiny" rather than trying to control it. If they don't need approvals, they will get a lot mroe out of Ansible.
+
+Q: A bunch of orgs did it independently. How do you bring it all together?
+A: Part is the answer to the previous question. And part of it is having community standards/governance.Eg: syntax, how to group playbooks, etc
