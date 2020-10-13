@@ -35,3 +35,52 @@ How will success be measured?
 ### DevOps
 
 This allows the devs not to have to worry about the environments being set up correctly.
+
+## Case Study: Defending a Defense Company with Ansible Automation
+
+Presenter has been using ansible for 6months
+
+Practices Ansible in his homelab (!)
+
+### The Problem
+
+Large Defense Contractor
+
+- massive global routing, switching firewall devices
+- backup management
+- configuration management
+- auditing privileged accounts
+- quick, secure, and efficient changes
+
+There's also a bunch of "islands of security" that require maintenance, management, and auditing
+
+eg docker, jenkins, aws, azue, Ansible, OpenShift, kubernetes
+
+This means there's LOTS of creds to manage and that can be untenable.
+
+### Networking 101
+
+NIST recommends Zero Trust - always assume you have to verify users
+
+- Switch - connecting everything
+- Routers - routing the traffic everywhere throughout the network
+- firewalls - in the past relied on this to keep the bad guys out
+
+### Real-World Use Cases
+
+Backup of Configs - why?
+- hardware goes bad
+- disaster recovery/business continuity
+
+Standardization and Compliance
+- Automate Firemware Upgrades - need to make sure the firmware on all network devices up to date because of attacks
+- Leverage NAC (network access control) - make sure automated and using ZeroTrust 
+- Device agnostic! - Can be utilized with over 24 platforms!
+
+### Solution - use what you already own
+
+They had a Central Redential Provider, Cisco Identity Serivces Engine, and Red Hat Ansible Tower
+
+(see Slide of how it Works)
+
+CyberArk provides Creds to Ansible. 
