@@ -1,0 +1,238 @@
+DevNation Day 2020
+
+Welcome:
+OpenShift Demo running across Amazon, Azure, and AWS. By using OpenShift you can have one interface across all of the cloud providers without dealing with the differences across providers.
+
+
+Kubernetes is Boring and the future is exciting:
+
+It's a simple model for keeping apps running
+    - lets apps scale up/down
+    - allows you to roll out new versions without downtime
+    - move apps around if a machine fails
+    - hand out resources fairly among different apps
+    - debug like you would on your own machine
+
+Are you:
+    - a team that runs lots of services that you want to have fairly consistent practices and pattersn?
+    - an enterprise infrastructure team that has to manage hundreds or thousands of applications?
+
+But remember - Kubernetes is not magic
+
+Why is it boring?
+
+You don't want pushing stuff out to be "exciting" - you want it to work correctly without any surprises
+
+After 6+ years - Kubernetes is *mostly* boring: predictable, stable, extensible, thriving community
+
+What's next?
+
+It should be easier:   
+    - to go from dev on laptop to production anywhere in the world
+    - to debug your runnign apps
+    - to enable self-service within your team/org/company
+    - track security of all the open source fotware you runa dn get prompted when your deps are updated
+
+Kubernetes is about useful abstractions.
+
+Examples from community:
+    - Schedule applications into clusters, detect failures, and rebalance automatically
+    - describe your service deps by interface and have them provisioned automatically (dev, test, prod)
+    - get rid of secrets by giving every instance its own identity and creds, and centralize authz
+    - provision and deploy your apps by introspecting source code directly, rather than having to define YAML
+
+-------------------------------------
+
+Kubernetes The Easy Way
+
+(A Demo)
+
+-------------------------------------
+
+Pods in Kubernetes and Openshift Cosmos
+
+(many technical slides about commands between levels of the API)
+
+A lot about how selinux and cgroups are helping to protect against container breakouts
+
+--------------------------------------
+
+Knative Backstage with teh Autoscaler
+
+Knative allows for serverless on Kubernetes
+
+key api services:
+    - servie 
+    - route
+    - configuration
+    - revision - creates revisions automatically as you make changes
+
+--------------------------------------
+
+Kubernetes in the Enterprise
+
+It's very different using a container on your laptop vs in the enterprise
+
+Containers are a disrupter
+
+    - can be destroyed and recreated as necessary - VMs can take a lot longer
+    - requires new design patterns
+
+Security!:
+
+What's the support needed for this app? Who is supporting it?
+
+What are any compliance issues?
+
+Vulnerability Assessment - have any been done against the Containers?
+
+Top concerns w/ security: certificates, networking constraints?, Storage, Access control, the containers you use
+
+Engage your security early and often
+
+Avoid building your own implementations - makes it harder to support as people leave
+
+Image Management is a key component of security - where are they coming from? All of Docker Hub? Or a smaller registry? Where will you keep your images?
+
+How will you import images? (important where we work)
+
+Kubernetes makes extensive use of PKI (yay!) 
+
+Networking can get very complicated: what IP address ranges do you need? How will ingress and egress work?
+
+Storage: no matter the hype, storage will be required to support the platform and end user applications
+
+Defend the platform: principle of leave priviledge; enable auditing. You can use Open Policy Agent/Gatekeeper
+
+Developer Experience:
+
+Security and network restrictions make it difficult to get started
+    - maybe can't get images or dependencies. Maybe I can't get external runtime resources
+
+Local Development:
+    - Most orgs provided machines disallow installtion and runtime of many components
+        - can't install sofwtarwe, hypervisors, container runtimes (docker or podman), IDEs? 
+    - So help enable dev productivity
+        - sofwtare available in the enterprise repo
+        - cloud bsed IDEs
+        - containerized development
+
+Kubernetes requires devs to truly understand their aps and any requirements.
+
+DevOPs is hard! Need to have better cooperation between the two!
+
+Kubernetes often uncovers unflattering organizational practices
+
+Kubernetes needs to be marketed across the organization. Awareness of the platform and its benefits drives adoption.
+
+--------------------
+
+Kubernetes Operators in Python with Kopf
+
+important that Kubernetes runs a restful API
+
+Operator contains some logic to operate on the k8s containerized/pods
+
+The simplest Kubernetes operator: import kopf, a decorator, and a function
+
+kopf run scriopts.py 
+
+Very easy to use Python to create Operators that will do different things based on messages they get from the Kubernetes API
+
+Typical Patterns:
+
+    - Children resources and status gathering
+    - Kubernetes as orchestrator of everything (meaning things that aren't containers) - like SageMaker, Spark, etc 
+    - Application-specific auto-scaling
+    - Cross-cluster connectivity
+    - Desire-driven design (of user experience)
+
+--------------------
+
+micropipenv
+
+The one installation tool that covers Pipenv, Poetry, and pip-tools
+
+Python Packaging:
+
+    - PyPi - current implementation is called Warehouse; https://pypi.org
+        - you can run your own, if you want to
+
+Resolving and Installing Dependencies in Python
+    - pip eg pip install micropipenv
+        - does not manage lock files
+        - No way to obtain origin of installed packages
+        - multiple installations can create broken environment
+        - not directly suitable for Python applications that much
+    - pip-tools 
+        - requirements.in
+        - requirements.txt
+        - pip-compile + pip-sync
+        - no virtual environment management
+            - virtual environment managed by user
+    - pipenv 
+        - the pypa recommended tool for installing packages with lock file management
+        - files:
+            -pipfile [TOML]
+                - direct dependencies
+                - additional config (Python version requirements, source config)
+                pipfile.lock [JSON]
+        - manages virtual environment and Pipenv files
+        - make sure you --deploy your application correctly
+        - ship pipfile and pipfile.lock with your application and anyone who downloads can replicate your environment
+        - easy workflow: pipenv install requests ... pipenv install --deploy
+        - unfortunately not verbose, especially if it goes wrong
+    - Poetry
+        - a community project to address issues in Python packages
+        - files
+            - pyproject.toml
+            - poetry.lock [toml]
+        - manages releases to an index
+            - helps with project lifecycle
+        - non-standard version specifiers
+        - redundant information
+    - micropipenv
+        - a lightweight wrapper for pip
+        - one file - optionally dependson toml/pytoml
+        - one single Python file has everything needed for the project
+        - does not implement resolver. 
+        - Complements all tools mentioned above - so if you are using micropipenv in a container it can work no matter what kind of tool your users/devs are using
+        - reduces container image size by 30MiB compared to Pipenv
+        - neat and unified logs
+        - reduces maintenance burden
+        - container images available on quay
+
+-----------------------
+
+Self-Service AI/ML Platform
+
+Containers help alleviate a lot of the issues in AI beauase it helps with reproducibility, infrastructure can be shared amongs the devs, can more quickly get their solutions deployed
+
+---------------------------
+
+Flask: How Much of a Microframework?
+
+Can create a site in very few lines and it's readable
+
+Pros:
+    - shallow learning curve
+    - "production ready"
+    - routing syntax is easy
+    - supports sessions and cookies
+    - extensible
+    - no "baked in" ORM & Admin
+    - excellent documentation
+
+Cons:
+    - complex for big apps
+    - small community in comparison to django
+
+Is Flask for small projects only? No, not necessarily
+Why is it called a micro-framework? Because you decide how many features you want to add in
+Can it do everything django does? Yes
+When should I use Flask instead of Django? Good for microservices or IOT-related projects. Flask runs OK in a Raspberry Pi Zero
+
+--------------------------
+
+Quantum Computing
+
