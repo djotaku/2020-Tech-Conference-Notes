@@ -113,3 +113,29 @@ A: Tower has organization and RBAC. Give each group control over their own "dest
 
 Q: A bunch of orgs did it independently. How do you bring it all together?
 A: Part is the answer to the previous question. And part of it is having community standards/governance.Eg: syntax, how to group playbooks, etc
+
+## Continuous Testing with Molecule, Ansible, and Github Actions
+
+The earlier you catch defects, the cheaper they are to fix!
+
+Uses a container for testing
+
+Molecule originally built to test Ansible roles, but you can use it to test playbooks.
+
+You can also use it to verify the yaml.
+
+Molecule can also make sure the playbook maintains idempotency
+
+To use as part of Github actions as easy as setting up Python to pip install molecule, yamllint, and ansible-lint.
+
+## Blue Cross Blue Shield of North Carolina: Deliver and Deploy Infrastructure Fast with Automation
+
+Thanks to automation - finished 9 weeks ahead of schedule, saving $850k
+
+Important to communicate value of automation to teams.
+
+## Red Hat Ansible Automatino Platform "NOW"
+
+Automation is no longer a "nice to have" - it's now the industry standard.
+
+(a big demo)
