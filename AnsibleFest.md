@@ -139,3 +139,61 @@ Important to communicate value of automation to teams.
 Automation is no longer a "nice to have" - it's now the industry standard.
 
 (a big demo)
+
+# 20201014
+
+## The future of Red Hat Ansible Automation Platform
+
+Ansible Automation Hub -> want to use your private roles and automation and combine it with Galaxy (community contributions). Want to give you the ability to curate it.
+
+Portable execution environments: You use virtual environments to manage Ansible execution. They aren't very portable, though. Can cause issues. So now there are execution environments. They are container-based. 
+
+## T-Mobile: Using automation to build and optimize networks
+
+Important to build relationships to discuss the designs and how the playbooks should be designed
+
+## Free Their minds: Driving culture change and workforce transformation
+
+Sandia National Labs
+
+They had the goals of 
+- reducing heterogeneity - have all workstations configured the same
+- promote security - thanks to above, easy to deal with security updates
+- streamline delivery
+- licecycle managment - had been missing before
+- reduce low value work - get rid of the drudgery of sysadmin work
+
+Challenges:
+- Infrastructure diversity
+- service diversity
+- culture 
+- team independence - teams are very independent. 
+- duplication of work - Because of above, a lot of wasted time duplicating work
+- training
+
+Why Ansible and Tower?
+
+At Sandia they tested Ansible, saltstack, chef, and puppet - Ansible won
+
+### Approach
+
+- Build a great toolbox so that people can see the benefits of Ansible
+- Market a great product - get people aware that this is available; we will take care of vulnerabilities for you as they arrive.
+- Target infrastructure with real impact - wanted to help the teams that needed it more. This also helps with marketing.
+- Build for future needs
+- Be the easy button - it has to be easy to use, well-writte, well-documented - it has to be easier than someone creating their own scripts
+
+### Obstacles
+
+- Don't touch my box - didn't force them. Showed the sysadmins the links to the repos. Once they saw it, they knew it would be better.
+- MY CM tool is better than Ansible - we didn't insiste that Ansible replace existing CM. There were some very established Chef and Puppet CM teams. We just said - maybe you can use Ansible where it fills in the cracks.
+- Policy - 
+- Mavericks - just don't target these guys. Go for 80% 
+- Dev groups and application owners
+
+### Culture Change
+- find a champion - what's below is the champion's duty
+- communication
+- relationships
+- commmunity
+- consensus
