@@ -197,3 +197,24 @@ At Sandia they tested Ansible, saltstack, chef, and puppet - Ansible won
 - relationships
 - commmunity
 - consensus
+
+### Workforce Transformation
+- brown bags
+- demos - Cool ones! Don't do simple basics like adding a user.
+- Hands on workshops
+- professional training
+- bounties - a team has something they need solved with ansible
+- Ansible challenges
+
+### Considerations
+- Buid a comprehensive toolbox
+- TEST TEST TEST TEST
+- Find a champion
+- Build trust
+- Plan for environments with real impact - not necessarily low hanging fruit
+- Middle out approach
+- Lots of carrots - policy comes later
+- Culture is tough to change - be patient, be a regular voice, and build a community
+
+## Building the Next-Gen Applications for multi-cloud environments
+
