@@ -235,3 +235,61 @@ On OpenShift the operator Red Hat ACM calls to the Ansible Automation platform t
 
 ## Live Q&A: Open Forum about the future of automation with Ansible Engineers Jason McKerr, Aaron Withrow, Adam Miller, and Richard Henshall
 
+Tower is availble to community as AWX
+
+Q: When does Tower 4 come out?
+A: Next year
+
+Q: How to update core modules ?
+A: Those are bound to the version of Ansible itself. The collections are versioned and we can work with that in our upgrade path.
+
+Q: Any support for IBM middleware software?
+A: Working with IBM to figure this out
+
+Q: What is the upstream project for automation platform?
+A: It's jsut all the components that make it up
+
+Q: Any thought on providing a version of Ansible tuned for a limited RAM or CPU platform?
+A: May be missing key libraries. 
+
+## Demystifying contributor culture: IRC, mailing lists, and netiquette for the 21st Century
+
+Mail having a subject heading had to be specified ni an RFC, for example.
+
+### IRC
+
+Been around since 1988
+
+No centralized logging / history
+
+What does offline mean anymore? 
+
+920 users in #ansible! - to fix - sometimes tehy have subtopic rooms
+
+#### IRC Tips
+
+- don't ask to ask - just ask
+- write for an international audience
+- don't DM people you don't know unless invited to do so
+- don't send 'naked pings' to another user - meaning don't use their name unless you have some stuff to say
+- it's ok to lurk before posting to better understand how the community interacts
+- try not to post lengthy blocks of text - break it up into concise points
+- put code samples into a paste service - pastebin, or gist.Github.combine
+
+
+### Mailing Lists
+
+Many use mailman
+
+Remember that email is asynchonous. So be patient.
+
+## How to get DevSecOps right, the Ansible way
+
+threats are evolving fast than ever and becomine increasingly sophisticated.
+
+(see attached slides)
+
+threat actors are using AI to make their attacks faster and "smarter"
+
+Ansible automation platform is supposed to help break silos
+
