@@ -218,3 +218,20 @@ At Sandia they tested Ansible, saltstack, chef, and puppet - Ansible won
 
 ## Building the Next-Gen Applications for multi-cloud environments
 
+Problem nowadays is that people want mutiple K8s clusters, including in more than once type of cloud environment.
+
+Hybrid cloud is really hard
+- error prone
+- inconsisten sucurity across envs
+- overwhelming to verify components, configs, policies, and compliance
+
+k8s is initially chosen in order to have an ease of management and provisioning
+
+Take k8s and run the OpenShift distro. Then add on the Red hat Ansible Automation Platform
+
+Openshift is missing a bit for making it easy to be on multiple clouds, but if you add Ansible - it fills in that gap.
+
+On OpenShift the operator Red Hat ACM calls to the Ansible Automation platform to use templates  to execute jobs. Then Red Hat ACM can see all teh Ansible stuff plus all the other stuff it normally sees.
+
+## Live Q&A: Open Forum about the future of automation with Ansible Engineers Jason McKerr, Aaron Withrow, Adam Miller, and Richard Henshall
+
