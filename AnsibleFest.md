@@ -293,3 +293,7 @@ threat actors are using AI to make their attacks faster and "smarter"
 
 Ansible automation platform is supposed to help break silos
 
+## Business Q&A with PRA Heatlh sciences
+
+Automation has helped saving a lot of sysadmin time
+
